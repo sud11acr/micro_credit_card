@@ -27,6 +27,14 @@ public class CreditCardController {
 
     }
 
+    @GetMapping("/findByIdCustomer/{idCustomer}")
+    public Mono<ResponseEntity<CreditCardResponse>> findByIdCustomer(@PathVariable String idCustomer){
+        System.out.println("findByIdCustomer "+idCustomer);
+        return service.findByIdCustomer(idCustomer).map(ResponseEntity::ok).defaultIfEmpty(ResponseEntity.noContent().build());
+
+    }
+
+
     @GetMapping("/findAll")
     public Mono<ResponseEntity<Flux<CreditCardResponse>>> findAll() {
         return Mono.just(

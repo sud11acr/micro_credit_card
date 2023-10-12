@@ -8,11 +8,12 @@ import com.project.micro.creditcard.repo.ICreditCardRepo;
 import com.project.micro.creditcard.service.ICreditCardService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Date;
-
+@Service
 public class CreditCardServiceImpl implements ICreditCardService {
 
     @Autowired
@@ -21,6 +22,11 @@ public class CreditCardServiceImpl implements ICreditCardService {
     @Override
     public Mono<CreditCardResponse> findById(String id) {
         return repo.findById(id).map(p-> CreditCardMapper.toCreditCardResponse(p));
+    }
+
+    @Override
+    public Mono<CreditCardResponse> findByIdCustomer(String idCustomer) {
+        return repo.findByIdCustomerAndStatus(idCustomer,true).map(p-> CreditCardMapper.toCreditCardResponse(p));
     }
 
     @Override

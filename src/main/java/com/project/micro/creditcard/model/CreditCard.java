@@ -19,7 +19,6 @@ public class CreditCard {
     private String idCreditCard;
     private String idCustomer;
     private String cardType;
-    private String descriptionType;
     private BigDecimal creditLimit;
     private BigDecimal currentBalance;
     private Date registrationDate;
