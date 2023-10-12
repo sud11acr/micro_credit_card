@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "3be9157d-ec6b-45ac-8f41-62d1ee8a16cc",
+		"name": "micro_credit_card",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10392878"
+	},
+	"item": [
+		{
+			"name": "localhost:8087/creditcard/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCustomer\":\"651af659dcb8217235e9953d\",\r\n    \"cardType\":\"1\",\r\n    \"creditLimit\":\"10000\",\r\n    \"currentBalance\":\"10000\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8087/creditcard/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"creditcard",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8087/creditcard/findByIdCustomer/651af659dcb8217235e9953d",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8087/creditcard/findByIdCustomer/651af659dcb8217235e9953d",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"creditcard",
+						"findByIdCustomer",
+						"651af659dcb8217235e9953d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
